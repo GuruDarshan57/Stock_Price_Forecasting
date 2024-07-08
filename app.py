@@ -7,6 +7,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+from datetime import datetime, timedelta
 
 # Load the pre-trained model
 model = load_model('Stock Predictions Model.keras')
@@ -16,8 +17,9 @@ st.header('Stock Market Predictor')
 
 # User input for stock symbol
 stock = st.text_input('Enter Stock Symbol', 'GOOG')
-start = '2014-01-01'
-end = '2024-06-29'
+# Get current date and calculate the date 10 years ago
+end_date = datetime.today().strftime('%Y-%m-%d')
+start_date = (datetime.today() - timedelta(days=365*10)).strftime('%Y-%m-%d')
 
 # Fetch stock data
 data = yf.download(stock, start, end)
