@@ -1,4 +1,4 @@
-# Stock Market Predictor
+# Stock Price Forecasting
 
 A machine learning application to analyze and predict stock prices using historical data and sentiment analysis of related news articles. The app is built with Streamlit for interactive visualizations and integrates a Keras model and BERT-based NLP models for analysis.
 
